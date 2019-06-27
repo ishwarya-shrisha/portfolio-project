@@ -4,6 +4,7 @@ body {
   font-family: 'Roboto', sans-serif;
   /* SET base font-size*/
   font-size: 20px;
+
 }
 
 h1{
@@ -13,4 +14,13 @@ h1{
 
 p{
   font-size: 1em;
+}
+
+figure{
+  margin: 25px auto;
+  width: 900px;
+}
+
+img {
+  max-width: 100%;
 }
