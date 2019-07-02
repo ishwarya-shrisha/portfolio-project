@@ -30,7 +30,7 @@ p{
 }
 
 nav {
-  background-color: rgb(56, 61, 60);
+  background-color: rgb(233, 240, 238);
   padding: 10px 0;
 }
 nav > ul {
@@ -60,4 +60,22 @@ img {
 .dropdown:hover ul {
     display: flex;
     flex-direction: column;
+}
+
+header{
+  height: 80vh;
+  background: url(https://picsum.photos/500/550) no-repeat top center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+header div {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background: rgb(18, 8, 71);
+  width: 100%;
 }
