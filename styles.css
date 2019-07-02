@@ -77,10 +77,12 @@ main {
 }
 
 main > section {
-  background: rgba(84, 56, 148, 0.05);
-  margin: 10px;
-  padding: 15px;
-  color: #333;
+    background: rgba(255, 255, 255, 0.5);
+    margin: 10px;
+    padding: 15px;
+    font-weight: bold;
+    color: #333;
+    text-transform: capitalize;
 }
 
 main section h2{
@@ -88,6 +90,24 @@ main section h2{
   text-transform: uppercase;
 }
 
+.cta-btn {
+  background: yellowgreen;
+  transition: 0.25s;
+  padding: 10px;
+  margin: 10px 0;
+  display: inline-block;
+  border-radius: 3px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.cta-btn:focus ,
+.cta-btn:hover {
+  background: yellow;
+  transform: translateY(-3px);
+}
+
 footer li{
   display: inline-block;
 }
+
