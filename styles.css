@@ -1,5 +1,5 @@
 body {
-  background-color: rgba(51, 170, 51, .1) ;
+  background-color: rgba(41, 58, 41, 0.1) ;
 
   font-family: 'Roboto', sans-serif;
   /* SET base font-size*/
@@ -9,6 +9,10 @@ body {
 
 li {
   list-style-type: none;
+}
+
+ul {
+  padding: none;
 }
 
 h1{
@@ -25,6 +29,14 @@ p{
   font-size: 1em;
 }
 
+nav {
+  background-color: rgb(56, 61, 60);
+  padding: 10px 0;
+}
+nav > ul {
+  display: flex;
+  justify-content: space-around;
+}
 figure{
   margin: 25px auto;
   width: 900px;
@@ -32,4 +44,20 @@ figure{
 
 img {
   max-width: 100%;
+}
+
+
+.dropdown ul {
+    background-color: white;
+    border-radius: 0 3px 3px 3px;
+    box-shadow: 3px 5px 5px rgba(0,.0,.0,0.05);
+    padding: 8px;
+    display: none;
+    position: absolute;
+}
+
+.dropdown:focus ul,
+.dropdown:hover ul {
+    display: flex;
+    flex-direction: column;
 }
