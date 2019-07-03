@@ -1,41 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Contact Me</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Contact Me</title>
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
-</head>
-<body>
-  <header>
-    <h1> Contact Me</h1>
-  </header>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
 
-  <nav>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    <nav>
       <ul>
-          <li><a href="../">Home</a></li>
-          <li><a href="../About/">About</a></li>
-          <li><a href="#">Contact</a></li>
-          <li>Portfolio
-              <ul>
-                  <li><a href="">Project1</a></li>
-                  <li><a href="">Project2</a></li>
-                  <li><a href="">Project3></a></li>
-              </ul>
-          </li>
+        <li><a href="#">Home</a></li>
+        <li><a href="About/">About</a></li>
+        <li><a href="Contact/">Contact</a></li>
+        <li class="dropdown">
+          Portfolio
+
+          <ul>
+            <li><a href="">Project1</a></li>
+            <li><a href="">Project2</a></li>
+            <li><a href="">Project3></a></li>
+          </ul>
+        </li>
       </ul>
-  </nav>
+    </nav>
 
-  <main>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam cum possimus quae saepe quos architecto, officiis numquam! Quia iste aliquam, architecto odio dolorum tenetur mollitia sequi dolorem ut minus accusamus?</p>
-  </main>
+    <header>
+      <h1>Contact Me</h1>
+    </header>
 
-  <footer>
+    <main>
+      <!--
+      The action attribute defines where on the server the form data should be sent
+      The method attribute specifies the HTTP method (GET or POST)
+    -->
+
+      <form action="form-responses/new" method="POST">
+        <!-- Developer's Note: 'placeholder' without using `<label>` is NOT RECOMMENDED for accessibility purposes. -->
+        <input
+          type="text"
+          name="firstname"
+          placeholder="First Name"
+          autofocus
+          required
+        />
+        <input type="text" name="lastname" placeholder="Last Name" />
+        <input
+          type="email"
+          name="userEmail"
+          placeholder="your.email@example.com"
+        />
+
+        <p>What's this message about?</p>
+
+        <div class="input-group">
+          <span>
+            <input
+              type="radio"
+              name="subject"
+              value="professional"
+              id="pro"
+              checked
+            />
+            <label for="pro">I'd like to hire you!</label>
+          </span>
+        </div>
+
+        <div class="input-group">
+          <span>
+            <input type="radio" name="subject" value="personal" id="personal" />
+            <label for="personal">Personal message</label>
+          </span>
+        </div>
+
+        <div class="input-group">
+          <span>
+            <input type="radio" name="subject" value="other" />
+            <label>Don't know/something else</label>
+          </span>
+        </div>
+
+        <div class="input-group">
+          <input
+            type="checkbox"
+            name="optin"
+            value="trusting"
+            checked
+          />Subscribe me to your newsletter!
+          <input
+            type="checkbox"
+            name="optout"
+            value="skeptical"
+            disabled
+          />Cheeky checkbox...
+        </div>
+
+        <div class="input-group--flex">
+          <label for="marketing">How did you hear about me?</label>
+          <select name="marketing" id="marketing">
+            <optgroup label="Online">
+              <option value="social"
+                >Social Media (FB, Twitter, LinkedIn)</option>
+
+              <option value="github">Online Portfolio (GitHub)</option>
+              <option value="search">Search Engine</option>
+              <option value="email">Email</option>
+            </optgroup>
+            <optgroup label="In-Person">
+              <option value="networking">We met at a networking event</option>
+              <option value="referral">Personal referral</option>
+              <option value="random">We met somewhere else</option>
+            </optgroup>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+        <div class="input-group--flex">
+        <textarea name="user_message" rows="8" cols="40"></textarea>
+        <div>
+        <input type="submit" />
+        <input type="reset" value="Reset" />
+
+        </div>
+        <div>
+      </form>
 
 
-  </footer>
+    </main>
 
-</body>
+    <footer></footer>
+  </body>
 </html>
