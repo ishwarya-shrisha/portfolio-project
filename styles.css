@@ -1,145 +1,162 @@
 body {
-  background-color: rgba(30, 199, 30, 0.1);
-
-  font-family: "Roboto", sans-serif;
-  /* SET base font-size*/
-  font-size: 20px;
+    background-color: rgba(30, 199, 30, 0.1);
+    font-family: "Roboto", sans-serif;
+    /* SET base font-size*/
+    font-size: 20px;
 }
 
 li {
-  list-style-type: none;
+    list-style-type: none;
 }
 
 ul {
-  padding: none;
+    padding: none;
 }
 
 h1 {
-  color: blue;
-  font-size: 3em;
+    color: blue;
+    font-size: 3em;
 }
 
 nav {
-  background-color: rgb(233, 240, 238);
-  padding: 10px 0;
+    background-color: rgb(233, 240, 238);
+    padding: 10px 0;
 }
-nav > ul {
-  display: flex;
-  justify-content: space-around;
+
+nav>ul {
+    display: flex;
+    justify-content: space-around;
 }
+
 figure {
-  margin: 25px auto;
-  width: 900px;
+    margin: 25px auto;
+    width: 900px;
 }
 
 img {
-  max-width: 100%;
+    max-width: 100%;
 }
 
 .dropdown ul {
-  background-color: white;
-  border-radius: 0 3px 3px 3px;
-  box-shadow: 3px 5px 5px rgba(0, 0, 0, 0.05);
-  padding: 8px;
-  display: none;
-  position: absolute;
+    background-color: white;
+    border-radius: 0 3px 3px 3px;
+    box-shadow: 3px 5px 5px rgba(0, 0, 0, 0.05);
+    padding: 8px;
+    display: none;
+    position: absolute;
 }
 
 .dropdown:focus ul,
 .dropdown:hover ul {
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
 }
 
 header {
-  height: 80vh;
-  background: url(https://picsum.photos/500/550) no-repeat top center;
-  background-size: cover;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+    height: 80vh;
+    background: url(https://picsum.photos/500/550) no-repeat top center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 header div {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  background: rgb(18, 8, 71);
-  width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background: rgb(18, 8, 71);
+    width: 100%;
 }
 
 main {
-  display: flex;
+    display: flex;
 }
 
-main > section {
-  background: rgba(255, 255, 255, 0.5);
-  margin: 10px;
-  padding: 15px;
-  font-weight: bold;
-  color: #333;
-  text-transform: capitalize;
+main>section {
+    background: rgba(255, 255, 255, 0.5);
+    margin: 10px;
+    padding: 15px;
+    font-weight: bold;
+    color: #333;
+    text-transform: capitalize;
 }
 
 main section h2 {
-  font-weight: bold;
-  text-transform: uppercase;
+    font-weight: bold;
+    text-transform: uppercase;
 }
 
 .cta-btn {
-  background: yellowgreen;
-  transition: 0.25s;
-  padding: 10px;
-  margin: 10px 0;
-  display: inline-block;
-  border-radius: 3px;
-  text-decoration: none;
-  text-transform: uppercase;
+    background: yellowgreen;
+    transition: 0.25s;
+    padding: 10px;
+    margin: 10px 0;
+    display: inline-block;
+    border-radius: 3px;
+    text-decoration: none;
+    text-transform: uppercase;
 }
 
 .cta-btn:focus,
 .cta-btn:hover {
-  background: yellow;
-  transform: translateY(-3px);
+    background: yellow;
+    transform: translateY(-3px);
 }
 
 footer li {
-  display: inline-block;
+    display: inline-block;
 }
+
 
 /* form */
 
 form {
-  margin: 15px auto;
-  width: 60%;
-  border: 3px solid rgb(175, 20, 20);
-  padding: 10px;
+    margin: 15px auto;
+    width: 60%;
+    border: 3px solid rgb(175, 20, 20);
+    padding: 10px;
 }
 
 form span {
-  margin: 0 5px;
+    margin: 0 5px;
 }
 
 input[type="checkbox"] {
-
-margin-right: 10px;
-transform: translateY(-3px);
+    margin-right: 10px;
+    transform: translateY(-3px);
 }
 
 input[type="radio"] {
-
-  transform: translateY(-3px);
-
+    transform: translateY(-3px);
 }
 
 .input-group {
-  margin: 15px 0;
-
+    margin: 15px 0;
 }
 
 .input-group--flex {
-  display: flex;
-  flex-direction: column;
-  max-width: 50%;
+    display: flex;
+    flex-direction: column;
+    max-width: 50%;
+}
+
+
+/* About  */
+
+.bio h1 {
+    font-size: 2em;
+    margin: 60px 3px 0px;
+    background-color: rgb(75, 175, 189);
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 60px;
+    font-style: italic;
+}
+
+.aboutpara p {
+    font-size: 1em;
+    text-align: left;
+    padding: 16px;
 }
