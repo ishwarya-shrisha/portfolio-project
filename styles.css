@@ -113,7 +113,7 @@ footer li {
 form {
   margin: 15px auto;
   width: 60%;
-  border: 3px solid rgb(238, 217, 217);
+  border: 3px solid rgb(175, 20, 20);
   padding: 10px;
 }
 
@@ -138,7 +138,7 @@ input[type="radio"] {
 
 }
 
-.input-group--flex{
+.input-group--flex {
   display: flex;
   flex-direction: column;
   max-width: 50%;
