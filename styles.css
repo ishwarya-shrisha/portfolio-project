@@ -151,12 +151,13 @@ input[type="radio"] {
     background-color: rgb(75, 175, 189);
     text-align: center;
     text-transform: uppercase;
-    font-size: 60px;
+    font-size: 80px;
     font-style: italic;
 }
 
 .aboutpara p {
-    font-size: 1em;
-    text-align: left;
-    padding: 16px;
+    padding-right: 50px;
+    margin-top: 30px;
+    line-height: 1.5em;
+    
 }
