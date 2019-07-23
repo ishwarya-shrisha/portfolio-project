@@ -1,8 +1,11 @@
+
+//Import : Bring in the necessary Functional    components.
 import Navigation from './components/Navigation';
 import Header from './components/Header';
 import Main from './components/Main';
 import Footer from './components/Footer';
 
+// describes the current state of the SPA. We say that we pass'pieces of state'
 const states = {
   'home' : {
 
@@ -19,11 +22,12 @@ const states = {
   }
 };
 
-//function declaration
+//function declaration . Render is  used to re-render the page.
 function render(state) {
 
+console.log('state came in as:' , state);
+// We use funtion invocation that actually runs the function ans then 'returns' the markup so that it is properly rendered in the browser.
 
-// We use funtion invocation that actually runs the function ans then 'returns' the markup so that it is properly rendered in the browser
 
 document.querySelector('#root').innerHTML = `
 ${Navigation(state)}
@@ -34,6 +38,7 @@ ${Navigation(state)}
 
 }
 // invokation
+// to render a page we pass in piece of state 
 render(states.home);
 
 // The Element wil not exist until page is rendered.
@@ -63,13 +68,15 @@ while (i < navItems.length) {
 
     //Target will reveal what generated the event - that is, what was 'clicked'.
 
-    const clickedItem = event.target.textContent;
-    const clicked  = clickedItem.toLowerCase();
+    //const clickedItem = event.target.textContent;
+    //const clicked  = clickedItem.toLowerCase();
+   // render(states[clicked]);
 
   // Developers note: render(states[event.target.textContent.toLowerCase()]);
-
-    render(states[clicked]);
-  });
+//event.target gives the elemnt.
+    render(states[event.target.textContent.toLowerCase()]);
+  }
+  );
 
   i += 1;
   
