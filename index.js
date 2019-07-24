@@ -44,8 +44,22 @@ render(states.home);
 // The Element wil not exist until page is rendered.
 const navItems = document.querySelectorAll('nav > ul > li:not(.dropdowm)');
 
+navItems.forEach(function eventListenerAdder(navItem) {
 
-let i = 0;
+navItem.addEventListener ( 'click' , function clickHandler(event){
+
+event.preventDefault();
+
+//console.log(event.target.textContent.toLowerCase());
+
+render(states[event.target.textContent.toLowerCase()]);
+
+
+});
+});
+
+
+//let i = 0;
 
 //Here the value of i will run from 0 until 3.
 //i will serve as a placeholder to represent the index of the item we need to access from navItems.
@@ -53,16 +67,16 @@ let i = 0;
 //console.log(navItems[1]);
 //console.log(navItems[2]);
 
-while (i < navItems.length) {
+//while (i < navItems.length) {
 
   //Use the value of i as an index to access the  navItem.
 
-  navItems[i].addEventListener('click' , 
+ // navItems[i].addEventListener('click' , 
   
   // Add this call back functionto each of the navItems.
   
-  function clickHandler(event) {
-    event.preventDefault();
+  //function clickHandler(event) {
+   // event.preventDefault();
     
     // Re-render the page with a new piece of State that is  derived from what was clicked.
 
@@ -74,13 +88,13 @@ while (i < navItems.length) {
 
   // Developers note: render(states[event.target.textContent.toLowerCase()]);
 //event.target gives the elemnt.
-    render(states[event.target.textContent.toLowerCase()]);
-  }
-  );
+   // render(states[event.target.textContent.toLowerCase()]);
+  //}
+  //);
 
-  i += 1;
+ // i += 1;
   
-}
+//}
 
 
 // We want to re-render our page based on what the user clicks on our navigation menu.
