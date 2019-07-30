@@ -55,7 +55,7 @@ event.preventDefault();
 render(states[event.target.textContent.toLowerCase()]);
 
 
-});
+     });
 });
 
 
