@@ -35,13 +35,10 @@ ${Navigation(state)}
   ${Main(state)}
     ${Footer(state)}
     `;
+    /*
+    Developers note: the 'Navigation functional components renders 'new' links each aand every time. Therefore, on each-render , we must grab those links and re-attach the event listeners to respond to 'clicks'.
 
-}
-// invokation
-// to render a page we pass in piece of state 
-render(states.home);
-
-// The Element wil not exist until page is rendered.
+    */
 const navItems = document.querySelectorAll('nav > ul > li:not(.dropdowm)');
 
 navItems.forEach(function eventListenerAdder(navItem) {
@@ -57,6 +54,13 @@ render(states[event.target.textContent.toLowerCase()]);
 
      });
 });
+
+}
+// invokation
+// to render a page we pass in piece of state 
+render(states.home);
+
+// The Element wil not exist until page is rendered.
 
 
 //let i = 0;
