@@ -8,11 +8,12 @@ import Footer from './components/Footer';
 // describes the current state of the SPA. We say that we pass'pieces of state'
 const store = {
   
-    'links': {
+    
+    'home' : {
+      'links': {
       'primary': ['Home', 'About', 'Contact'],
       'dropdown': ['project 1', 'project 2', 'project 3']
     },
-    'home' : {
      'title': 'A New Web Developer',
      'page' : `<section>
         <h2>This is a Section</h2>
@@ -45,6 +46,10 @@ const store = {
   } ,
 
   'about' : {
+    'links': {
+      'primary': ['Home', 'About', 'Contact'],
+      'dropdown': ['project 1', 'project 2', 'project 3']
+    },
     'title' : 'About Page',
     'page' : `<p class="aboutpara"> "My Name is Ishwarya Ragavendra and I am" <em> very excited </em> "to welcome you to my online Portfolio. I Hope you like it. I am just beginning my journey as a web developer. I had always had planned on working with kids with special needs and
             devoting my career to learning more about them and how to help them. After years of misleading jobs, i decided decided to change things up. Enter: SavvyCoders. I applied to SavvyCoders with little to no knowledge of coding, and an overwhelming
@@ -52,6 +57,10 @@ const store = {
   } , 
 
   'contact' : {
+    'links': {
+      'primary': ['Home', 'About', 'Contact'],
+      'dropdown': ['project 1', 'project 2', 'project 3']
+    },
 
     'title' : 'Contact',
     'page' : ` <form action="form-responses/new" method="POST" netlify>
