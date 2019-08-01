@@ -6,7 +6,7 @@ import Main from './components/Main';
 import Footer from './components/Footer';
 
 // describes the current state of the SPA. We say that we pass'pieces of state'
-const states = {
+const store = {
   'home' : {
 
      'title': 'A New Web Developer'
@@ -48,8 +48,8 @@ navItem.addEventListener ( 'click' , function clickHandler(event){
 event.preventDefault();
 
 //console.log(event.target.textContent.toLowerCase());
-
-render(states[event.target.textContent.toLowerCase()]);
+//Recursive function call.
+render(store[event.target.textContent.toLowerCase()]);
 
 
      });
@@ -58,7 +58,7 @@ render(states[event.target.textContent.toLowerCase()]);
 }
 // invokation
 // to render a page we pass in piece of state 
-render(states.home);
+render(store.home);
 
 // The Element wil not exist until page is rendered.
 
@@ -88,11 +88,11 @@ render(states.home);
 
     //const clickedItem = event.target.textContent;
     //const clicked  = clickedItem.toLowerCase();
-   // render(states[clicked]);
+   // render(store[clicked]);
 
-  // Developers note: render(states[event.target.textContent.toLowerCase()]);
+  // Developers note: render(store[event.target.textContent.toLowerCase()]);
 //event.target gives the elemnt.
-   // render(states[event.target.textContent.toLowerCase()]);
+   // render(store[event.target.textContent.toLowerCase()]);
   //}
   //);
 
