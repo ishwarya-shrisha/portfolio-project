@@ -7,18 +7,143 @@ import Footer from './components/Footer';
 
 // describes the current state of the SPA. We say that we pass'pieces of state'
 const store = {
-  'home' : {
+  
+    'links': {
+      'primary': ['Home', 'About', 'Contact'],
+      'dropdown': ['project 1', 'project 2', 'project 3']
+    },
+    'home' : {
+     'title': 'A New Web Developer',
+     'page' : `<section>
+        <h2>This is a Section</h2>
 
-     'title': 'A New Web Developer'
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex quam neque laborum. Doloribus, vitae? Quod ad voluptatem, numquam vitae quibusdam incidunt eos! Ipsa voluptatibus vel voluptate repudiandae similique alias quam!
+      </p>
+
+      <a href="#" class="cta-btn" ">Read More!</a>
+    </section>
+
+
+  <section>
+    <h2>This is a section</h2>
+
+    <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex quam neque laborum. Doloribus, vitae? Quod ad voluptatem, numquam vitae quibusdam incidunt eos! Ipsa voluptatibus vel voluptate repudiandae similique alias quam!</p>
+
+    <a href="#" class="cta-btn">Read More!</a>
+
+  </section>
+
+ <section>
+    <h2>This is a section</h2>
+
+  <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex quam neque laborum. Doloribus, vitae? Quod ad voluptatem, numquam vitae quibusdam incidunt eos! Ipsa voluptatibus vel voluptate repudiandae similique alias quam!</p>
+
+  <a href="#" class="cta-btn">Read More!</a>
+
+ </section>
+`
   } ,
 
   'about' : {
-    'title' : 'About Page'
+    'title' : 'About Page',
+    'page' : `<p class="aboutpara"> "My Name is Ishwarya Ragavendra and I am" <em> very excited </em> "to welcome you to my online Portfolio. I Hope you like it. I am just beginning my journey as a web developer. I had always had planned on working with kids with special needs and
+            devoting my career to learning more about them and how to help them. After years of misleading jobs, i decided decided to change things up. Enter: SavvyCoders. I applied to SavvyCoders with little to no knowledge of coding, and an overwhelming
+            desire to change my career. Throughout this program, I learned to love coding and am eager to begin my new career in web application development "</p>`
   } , 
 
   'contact' : {
 
-    'title' : 'Contact'
+    'title' : 'Contact',
+    'page' : ` <form action="form-responses/new" method="POST" netlify>
+        <!-- Developer's Note: 'placeholder' without using <label> is NOT RECOMMENDED for accessibility purposes. -->
+        <input
+          type="text"
+          name="firstname"
+          placeholder="First Name"
+          autofocus
+          required
+        />
+        <input type="text" name="lastname" placeholder="Last Name" />
+        <input
+          type="email"
+          name="userEmail"
+          placeholder="your.email@example.com"
+        />
+
+        <p>What's this message about?</p>
+
+        <div class="input-group">
+          <span>
+            <input
+              type="radio"
+              name="subject"
+              value="professional"
+              id="pro"
+              checked
+            />
+            <label for="pro">I'd like to hire you!</label>
+          </span>
+        </div>
+
+        <div class="input-group">
+          <span>
+            <input type="radio" name="subject" value="personal" id="personal" />
+            <label for="personal">Personal message</label>
+          </span>
+        </div>
+
+        <div class="input-group">
+          <span>
+            <input type="radio" name="subject" value="other" />
+            <label>Don't know/something else</label>
+          </span>
+        </div>
+
+        <div class="input-group">
+          <input
+            type="checkbox"
+            name="optin"
+            value="trusting"
+            checked
+          />Subscribe me to your newsletter!
+          <input
+            type="checkbox"
+            name="optout"
+            value="skeptical"
+            disabled
+          />Cheeky checkbox...
+        </div>
+
+        <div class="input-group--flex">
+          <label for="marketing">How did you hear about me?</label>
+          <select name="marketing" id="marketing">
+            <optgroup label="Online">
+              <option value="social"
+                >Social Media (FB, Twitter, LinkedIn)</option>
+
+              <option value="github">Online Portfolio (GitHub)</option>
+              <option value="search">Search Engine</option>
+              <option value="email">Email</option>
+            </optgroup>
+            <optgroup label="In-Person">
+              <option value="networking">We met at a networking event</option>
+              <option value="referral">Personal referral</option>
+              <option value="random">We met somewhere else</option>
+            </optgroup>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+        <div class="input-group--flex">
+        <textarea name="user_message" rows="8" cols="40"></textarea>
+        <div>
+        <input type="submit" />
+        <input type="reset" value="Reset" />
+
+        </div>
+      </div>
+      </form>
+`
   }
 };
 
@@ -28,7 +153,7 @@ function render(state) {
 console.log('state came in as:' , state);
 // We use funtion invocation that actually runs the function ans then 'returns' the markup so that it is properly rendered in the browser.
 
-
+//innerHTMl property root element
 document.querySelector('#root').innerHTML = `
 ${Navigation(state)}
  ${Header(state)}
@@ -49,6 +174,7 @@ event.preventDefault();
 
 //console.log(event.target.textContent.toLowerCase());
 //Recursive function call.
+//event is object
 render(store[event.target.textContent.toLowerCase()]);
 
 
