@@ -1,4 +1,8 @@
 function linkBuilder(links){
+
+return links.map(function linkLister(link){
+  return `<li>${link}</li>`;
+}).join(' ');
   //Recieve an array of 'strings' that are the names of links
   //return all of <li> items.
   let listHTML = "";
