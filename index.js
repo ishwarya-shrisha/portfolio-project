@@ -5,6 +5,14 @@ import Header from './components/Header';
 import Main from './components/Main';
 import Footer from './components/Footer';
 
+import Navigo from 'navigo';  
+
+//location.origin  provides the 'bade' URL for Navigo to get started.
+// new creates a new instance of Navigo from its construction fxn.
+const router = new Navigo(location.origin);
+
+
+
 // describes the current state of the SPA. We say that we pass'pieces of state'
 const store = {
   
@@ -217,8 +225,36 @@ render(store[event.target.textContent.toLowerCase()]);
 // to render a page we pass in piece of state 
 render(store.home);
 
-// The Element wil not exist until page is rendered.
+//router.on("/", () => console.log("hello home page!")).resolve();
+// on takes in as a string the result of location.pathname as the first parameter
+// on is a navigo method that behaves as any other event listener might.
+// it listens to location.pathnamea and responds accordingly.
 
+/*router.on ('/' , function routerFxn() {
+  console.log('Hello Home page');
+}).resolve();
+// The Element wil not exist until page is rendered.
+router.on ('/about' , function routerFxn() {
+  console.log('Hello About page');
+}).resolve();
+
+router
+    .on('/', function routerFxn(){
+        console.log('hello home page!');
+    })
+    .resolve();
+*/
+router
+    .on(':view', function handleParams(params){
+       // console.log('hello',params.page);
+        //console.log('params is:' , params);
+       // console.log('router will show:', store(params.view));
+        render(store[params.view]);
+    })
+    .on('/', function resolver(){
+       // console.log('hello home page!');
+    })
+    .resolve();
 
 //let i = 0;
 
