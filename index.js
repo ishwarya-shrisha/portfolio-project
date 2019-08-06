@@ -199,8 +199,14 @@ ${Navigation(state)}
     /*
     Developers note: the 'Navigation functional components renders 'new' links each aand every time. Therefore, on each-render , we must grab those links and re-attach the event listeners to respond to 'clicks'.
 
+
     */
-const navItems = document.querySelectorAll('nav > ul > li:not(.dropdowm)');
+
+    router.updatePageLinks();
+    //replaces our custom click event listeners with the recursive render.
+
+}
+/*const navItems = document.querySelectorAll('nav > ul > li:not(.dropdowm)');
 
 //queryselectorall is a css selector
 
@@ -219,8 +225,8 @@ render(store[event.target.textContent.toLowerCase()]);
 
      });
 });
+*/
 
-}
 // invokation
 // to render a page we pass in piece of state 
 render(store.home);
@@ -244,6 +250,8 @@ router
     })
     .resolve();
 */
+
+//https://github.com/krasimir/navigo#parameterized-urls
 router
     .on(':view', function handleParams(params){
        // console.log('hello',params.page);
