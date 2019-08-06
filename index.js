@@ -11,9 +11,10 @@ const store = {
     
     'home' : {
       'links': {
-      'primary': ['Home', 'About', 'Contact'],
+      'primary': ['Home', 'About', 'Contact', 'Blog'],
       'dropdown': ['project 1', 'project 2', 'project 3']
     },
+    
      'title': 'A New Web Developer',
      'page' : `<section>
         <h2>This is a Section</h2>
@@ -47,7 +48,7 @@ const store = {
 
   'about' : {
     'links': {
-      'primary': ['Home', 'About', 'Contact'],
+      'primary': ['Home', 'About', 'Contact', 'Blog'],
       'dropdown': ['project 1', 'project 2', 'project 3']
     },
     'title' : 'About Page',
@@ -58,7 +59,7 @@ const store = {
 
   'contact' : {
     'links': {
-      'primary': ['Home', 'About', 'Contact'],
+      'primary': ['Home', 'About', 'Contact', 'Blog'],
       'dropdown': ['project 1', 'project 2', 'project 3']
     },
 
@@ -153,8 +154,26 @@ const store = {
       </div>
       </form>
 `
-  }
-};
+  
+},
+
+'blog' : {
+    'links': {
+      'primary': ['Home', 'About', 'Contact', 'Blog'],
+      'dropdown': ['project 1', 'project 2', 'project 3']
+    },
+
+    'title' : 'Blog Page',
+
+    //'Page' will be updated after we fetch the data for the blog post.
+
+    'page' : ` <p>  Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex quam neque laborum. Doloribus, vitae? Quod ad voluptatem, numquam vitae quibusdam incidunt eos! Ipsa voluptatibus vel voluptate repudiandae similique alias quam!</p> `
+  
+}
+  
+  };
+
+
 
 //function declaration . Render is  used to re-render the page.
 function render(state) {
@@ -175,6 +194,8 @@ ${Navigation(state)}
     */
 const navItems = document.querySelectorAll('nav > ul > li:not(.dropdowm)');
 
+//queryselectorall is a css selector
+
 navItems.forEach(function eventListenerAdder(navItem) {
 
 navItem.addEventListener ( 'click' , function clickHandler(event){
@@ -185,6 +206,7 @@ event.preventDefault();
 //Recursive function call.
 //event is object
 render(store[event.target.textContent.toLowerCase()]);
+//thats an expression that will evaulate string 
 
 
      });
