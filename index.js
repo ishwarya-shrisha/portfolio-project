@@ -272,6 +272,21 @@ router
     })
     .resolve();
 
+fetch ('https://jsonplaceholder.typicode.com/posts')
+.then((response) => response.json())
+.then((blogPosts) => {
+  const blogHTML = blogPosts.map((blogPost) => `
+    <section>
+    <h2>${blogPost.title}</h2>
+    <p>${blogPost.body}</p>
+    </section>
+
+`).join('');
+
+store.blog.page = blogHTML;
+    //console.log(blogHTML);
+
+});
 //let i = 0;
 
 //Here the value of i will run from 0 until 3.
