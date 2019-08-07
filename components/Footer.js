@@ -1,7 +1,5 @@
 
-export default function(state){
-
-return `
+export default (state) => `
   <footer>
       <ul>
         <li>
@@ -30,4 +28,3 @@ return `
         123 Main St.<br>
     </footer>
     `;
-}

@@ -186,7 +186,7 @@ const store = {
 //function declaration . Render is  used to re-render the page.
 function render(state) {
 
-console.log('state came in as:' , state);
+//console.log('state came in as:' , state);
 // We use funtion invocation that actually runs the function ans then 'returns' the markup so that it is properly rendered in the browser.
 
 //innerHTMl property root element
@@ -252,7 +252,7 @@ router
 */
 
 //https://github.com/krasimir/navigo#parameterized-urls
-router
+/*router
     .on(':view', function handleParams(params){
        // console.log('hello',params.page);
         //console.log('params is:' , params);
@@ -261,6 +261,14 @@ router
     })
     .on('/', function resolver(){
        // console.log('hello home page!');
+    })
+    .resolve();
+
+*/
+
+router
+    .on( ':view' , (params) => {
+        render(store[params.view]);
     })
     .resolve();
 
