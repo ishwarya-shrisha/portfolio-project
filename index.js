@@ -6,6 +6,7 @@ import Main from './components/Main';
 import Footer from './components/Footer';
 
 import Navigo from 'navigo';  
+import axios from 'axios';
 
 //location.origin  provides the 'bade' URL for Navigo to get started.
 // new creates a new instance of Navigo from its construction fxn.
@@ -272,10 +273,11 @@ router
     })
     .resolve();
 
-fetch ('https://jsonplaceholder.typicode.com/posts')
-.then((response) => response.json())
-.then((blogPosts) => {
-  const blogHTML = blogPosts.map((blogPost) => `
+    axios.get('https://jsonplaceholder.typicode.com/posts')
+    
+    .then((response) => {
+      const blogPosts = response.data;
+      const blogHTML = blogPosts.map((blogPost) => `
     <section>
     <h2>${blogPost.title}</h2>
     <p>${blogPost.body}</p>
@@ -287,6 +289,9 @@ store.blog.page = blogHTML;
     //console.log(blogHTML);
 
 });
+
+
+
 //let i = 0;
 
 //Here the value of i will run from 0 until 3.
