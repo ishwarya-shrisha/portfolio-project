@@ -64,7 +64,7 @@ img {
 
 header {
     height: 80vh;
-    background: url(https://picsum.photos/500/550) no-repeat top center;
+    /* background: url(https://picsum.photos/500/550) no-repeat top center; */
     background-size: cover;
     display: flex;
     flex-direction: column;
