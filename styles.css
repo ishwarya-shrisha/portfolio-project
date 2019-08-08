@@ -1,8 +1,9 @@
 body {
     background-color: rgba(30, 199, 30, 0.1);
-    font-family: "Roboto", sans-serif;
+    font-family: "Raleway", sans-serif;
     /* SET base font-size*/
-    font-size: 25px;
+    font-size: 20px;
+    font-style: italic;
 }
 
 li {
@@ -25,8 +26,11 @@ h1 {
 }
 
 nav {
-    background-color: rgb(233, 240, 238);
+    background-color: #898c88;
     padding: 10px 0;
+    margin: 20px;
+    font-weight: bold;
+    font-size: 25px;
 }
 
 nav>ul {
@@ -121,7 +125,7 @@ footer li {
 form {
     margin: 15px auto;
     width: 60%;
-    border: 3px solid rgb(175, 20, 20);
+    border: 3px solid #0a1207;
     padding: 10px;
 }
 
