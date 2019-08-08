@@ -11,15 +11,15 @@ export default (state) => `
 
       <li>
 
-          <a href="https://github.com/ishwarya-shrisha" target="_blank">
-            <span class="fab fa-github-square"></span>
+          <a href="https://www.facebook.com/ishu.shrishu" target="_blank">
+            <span class="fab fa-facebook-f"></span>
           </a>
           </li>
 
           <li>
 
               <a href="https://github.com/ishwarya-shrisha" target="_blank">
-                <span class="fab fa-github-square"></span>
+                <span class="fab fa-linkedin-in"></span>
               </a>
               </li>
       </ul>
