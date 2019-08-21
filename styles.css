@@ -172,7 +172,7 @@ label {
     display: grid;
     /* Set up 2 columns - first is a width of 12rems, the other is decided by the browser. */
     grid-template-columns: 12rem auto;
-    grid-template-rows: min-content auto auto min-content;
+    grid-template-rows: min-content 1fr 1fr min-content;
     /* Named areas. */
     grid-template-areas: "navigation header" "navigation main" "navigation main" "navigation footer";
     margin: 100px 250px 100px 250px;
@@ -197,6 +197,15 @@ main {
 footer {
     grid-area: footer;
     float: left;
+}
+
+footer ul {
+    display: flex;
+    justify-content: inherit;
+}
+
+footer ul li {
+    -ms-flex-direction: row;
 }
 
 .aboutlearn {
