@@ -1,173 +1,219 @@
-body {
-    background-color: rgba(30, 199, 30, 0.1);
-    font-family: "Raleway", sans-serif;
-    /* SET base font-size*/
-    font-size: 20px;
-    font-style: italic;
-}
-
-li {
-    list-style-type: none;
-    
-    
-}
-
-li:hover,
-li:focus {
-    cursor: pointer;
-}
-ul {
-    padding: none;
+html {
+    background-color: #f4f1f1;
+    font-family: 'Raleway', sans-serif;
 }
 
 h1 {
-    color: blue;
-    font-size: 3em;
+    color: #282829;
+    font-style: italic;
 }
 
-nav {
-    background-color: #898c88;
-    padding: 10px 0;
-    margin: 20px;
-    font-weight: bold;
-    font-size: 25px;
+header {
+    font-size: 24px;
+    padding-top: 30px;
+    color: #282829;
+    padding-left: 100px;
+    font-family: 'Playfair Display', sans-serif;
+}
+
+footer {
+    color: #6c9575;
+    text-align: center;
+    padding-right: 210px;
+    padding-bottom: 20px;
+    padding-top: 70px;
+}
+
+.blog-main {
+    padding-right: 150px;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex--column {
+    flex-direction: column;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
 }
 
 nav>ul {
-    display: flex;
-    justify-content: space-around;
+    flex-direction: column;
 }
 
-figure {
-    margin: 25px auto;
-    width: 900px;
+li {
+    list-style: none;
+    padding-top: 10px;
 }
 
-img {
-    max-width: 100%;
+h2 {
+    text-align: center;
 }
 
-.dropdown ul {
-    background-color: white;
-    border-radius: 0 3px 3px 3px;
-    box-shadow: 3px 5px 5px rgba(0, 0, 0, 0.05);
-    padding: 8px;
+a {
+    text-decoration: none;
+    color: #075217;
+}
+
+.justify-space--between {
+    justify-content: space-between;
+}
+
+.sec1 {
+    margin-bottom: 40px;
+}
+
+.sec1 li {
+    list-style: square;
+    padding: 0 15px;
+}
+
+nav {
+    position: sticky;
+    top: 0;
+    padding: 15px;
+}
+
+nav li {
+    margin: 0 20px;
+    text-transform: uppercase;
+    color: #6c9575;
+}
+
+#dropdown {
     display: none;
     position: absolute;
 }
 
-.dropdown:focus ul,
-.dropdown:hover ul {
-    display: flex;
+li:hover #dropdown {
+    display: block;
+}
+
+#root {
+    border: solid 3px #eee;
+    background: #fff;
+    display: grid;
+    grid-template-columns: 12rem auto;
+    grid-template-rows: min-content auto auto min-content;
+    grid-template-areas: "navigation header" "navigation main" "navigation main" "navigation footer";
+    margin: 100px 250px 100px 250px;
+}
+
+nav {
+    grid-area: navigation;
+}
+
+nav>ul {
     flex-direction: column;
 }
 
 header {
-    height: 80vh;
-    /* background: url(https://picsum.photos/500/550) no-repeat top center; */
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-header div {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    background: rgb(18, 8, 71);
-    width: 100%;
+    grid-area: header;
 }
 
 main {
-    display: flex;
+    grid-area: main;
 }
 
-main>section {
-    background: rgba(255, 255, 255, 0.5);
-    margin: 10px;
-    padding: 15px;
-    font-weight: bold;
-    color: #333;
-    text-transform: capitalize;
+footer {
+    grid-area: footer;
 }
 
-main section h2 {
-    font-weight: bold;
-    text-transform: uppercase;
-}
-
-.cta-btn {
-    background: yellowgreen;
-    transition: 0.25s;
-    padding: 10px;
-    margin: 10px 0;
-    display: inline-block;
-    border-radius: 3px;
-    text-decoration: none;
-    text-transform: uppercase;
-}
-
-.cta-btn:focus,
-.cta-btn:hover {
-    background: yellow;
-    transform: translateY(-3px);
-}
-
-footer li {
-    display: inline-block;
-}
-
-
-/* form */
-
-form {
-    margin: 15px auto;
-    width: 60%;
-    border: 3px solid #0a1207;
-    padding: 10px;
-}
-
-form span {
-    margin: 0 5px;
-}
-
-input[type="checkbox"] {
-    margin-right: 10px;
-    transform: translateY(-3px);
-}
-
-input[type="radio"] {
-    transform: translateY(-3px);
-}
-
-.input-group {
-    margin: 15px 0;
-}
-
-.input-group--flex {
-    display: flex;
-    flex-direction: column;
-    max-width: 50%;
-}
-
-
-/* About  */
-
-.bio h1 {
-    font-size: 2em;
-    margin: 60px 3px 0px;
-    background-color: rgb(75, 175, 189);
-    text-align: center;
-    text-transform: uppercase;
-    font-size: 80px;
-    font-style: italic;
-}
-
-.aboutpara p {
+.aboutpara {
     padding-right: 50px;
     margin-top: 30px;
     line-height: 1.5em;
-    
+}
+
+
+/* Form */
+
+span+span {
+    margin-left: 15px;
+}
+
+form span+div {
+    margin-top: 20px;
+}
+
+textarea {
+    margin-top: 10px;
+}
+
+form p {
+    margin-bottom: 15px;
+}
+
+form>div+div {
+    margin-top: 25px;
+}
+
+label {
+    padding-top: 10px
+}
+
+.flex--column {
+    padding-right: 30px
+}
+
+#contact-form {
+    max-width: 880px;
+    font-size: 13px
+}
+
+#root {
+    border: solid 3px #eee;
+    background: #fff;
+    /* Establish a grid. */
+    display: grid;
+    /* Set up 2 columns - first is a width of 12rems, the other is decided by the browser. */
+    grid-template-columns: 12rem auto;
+    grid-template-rows: min-content auto auto min-content;
+    /* Named areas. */
+    grid-template-areas: "navigation header" "navigation main" "navigation main" "navigation footer";
+    margin: 100px 250px 100px 250px;
+}
+
+nav {
+    grid-area: navigation;
+}
+
+nav>ul {
+    flex-direction: column;
+}
+
+header {
+    grid-area: header;
+}
+
+main {
+    grid-area: main;
+}
+
+footer {
+    grid-area: footer;
+    float: left;
+}
+
+
+}
+.aboutlearn {
+    text-align: center;
+    padding-right: 90px;
+    padding-bottom: 20px;
+    font-weight: bold;
+}
+.aboutpara {
+    padding-right: 50px;
+    margin-top: 30px;
+    line-height: 1.5em;
+}
+figcaption {
+    text-align: center;
+    padding-right: 170px;
+    width: 500px;
 }

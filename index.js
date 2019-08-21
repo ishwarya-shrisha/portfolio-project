@@ -1,79 +1,56 @@
-
-//Import : Bring in the necessary Functional    components.
+// Import : Bring in the necessary Functional    components.
 import Navigation from './components/Navigation';
 import Header from './components/Header';
 import Main from './components/Main';
 import Footer from './components/Footer';
 
-import Navigo from 'navigo';  
+import Navigo from 'navigo';
 import axios from 'axios';
 
-//location.origin  provides the 'bade' URL for Navigo to get started.
+// location.origin  provides the 'bade' URL for Navigo to get started.
 // new creates a new instance of Navigo from its construction fxn.
 const router = new Navigo(location.origin);
 
 
-
 // describes the current state of the SPA. We say that we pass'pieces of state'
 const store = {
-  
-    
-    'home' : {
-      'links': {
-      'primary': ['Home', 'About', 'Contact', 'Blog'],
-      'dropdown': ['project 1', 'project 2', 'project 3']
-    },
-    
-     'title': 'A New Web Developer',
-     'page' : `<section>
-        <h2>This is a Section</h2>
-
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex quam neque laborum. Doloribus, vitae? Quod ad voluptatem, numquam vitae quibusdam incidunt eos! Ipsa voluptatibus vel voluptate repudiandae similique alias quam!
-      </p>
-
-      <a href="#" class="cta-btn" ">Read More!</a>
-    </section>
 
 
-  <section>
-    <h2>This is a section</h2>
+    'home': {
+        'links': {
+            'primary': [ 'Home', 'About', 'Contact', 'Blog' ],
+            'dropdown': [ 'project 1' ]
+        },
 
-    <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex quam neque laborum. Doloribus, vitae? Quod ad voluptatem, numquam vitae quibusdam incidunt eos! Ipsa voluptatibus vel voluptate repudiandae similique alias quam!</p>
+        'title': 'Ishwarya Ragavendra',
+        'page': ` <figure>
 
-    <a href="#" class="cta-btn">Read More!</a>
+        <img src="https://res.cloudinary.com/ds4gi3vhf/image/upload/v1566314869/IMG_3427_pa90cp.jpg" width="500px" alt="Me, attempting to be a model">
 
-  </section>
+    </figure>
 
- <section>
-    <h2>This is a section</h2>
-
-  <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex quam neque laborum. Doloribus, vitae? Quod ad voluptatem, numquam vitae quibusdam incidunt eos! Ipsa voluptatibus vel voluptate repudiandae similique alias quam!</p>
-
-  <a href="#" class="cta-btn">Read More!</a>
-
- </section>
 `
-  } ,
-
-  'about' : {
-    'links': {
-      'primary': ['Home', 'About', 'Contact', 'Blog'],
-      'dropdown': ['project 1', 'project 2', 'project 3']
     },
-    'title' : 'About Page',
-    'page' : `<p class="aboutpara"> "My Name is Ishwarya Ragavendra and I am" <em> very excited </em> "to welcome you to my online Portfolio. I Hope you like it. I am just beginning my journey as a web developer. I had always had planned on working with kids with special needs and
+
+    'about': {
+        'links': {
+            'primary': [ 'Home', 'About', 'Contact', 'Blog' ],
+            'dropdown': [ 'project 1', 'project 2', 'project 3' ]
+        },
+        'title': 'About Page',
+        'page': `<p class="aboutpara"> "My Name is Ishwarya Ragavendra and I am" <em> very excited </em> "to welcome you to my online Portfolio. I Hope you like it. I am just beginning my journey as a web developer. I had always had planned on working with kids with special needs and
             devoting my career to learning more about them and how to help them. After years of misleading jobs, i decided decided to change things up. Enter: SavvyCoders. I applied to SavvyCoders with little to no knowledge of coding, and an overwhelming
             desire to change my career. Throughout this program, I learned to love coding and am eager to begin my new career in web application development "</p>`
-  } , 
-
-  'contact' : {
-    'links': {
-      'primary': ['Home', 'About', 'Contact', 'Blog'],
-      'dropdown': ['project 1', 'project 2', 'project 3']
     },
 
-    'title' : 'Contact',
-    'page' : ` <form action="form-responses/new" method="POST" netlify>
+    'contact': {
+        'links': {
+            'primary': [ 'Home', 'About', 'Contact', 'Blog' ],
+            'dropdown': [ 'project 1', 'project 2', 'project 3' ]
+        },
+
+        'title': 'Contact',
+        'page': ` <form action="form-responses/new" method="POST" netlify>
         <!-- Developer's Note: 'placeholder' without using <label> is NOT RECOMMENDED for accessibility purposes. -->
         <input
           type="text"
@@ -163,35 +140,33 @@ const store = {
       </div>
       </form>
 `
-  
-},
 
-'blog' : {
-    'links': {
-      'primary': ['Home', 'About', 'Contact', 'Blog'],
-      'dropdown': ['project 1', 'project 2', 'project 3']
     },
 
-    'title' : 'Blog Page',
+    'blog': {
+        'links': {
+            'primary': [ 'Home', 'About', 'Contact', 'Blog' ],
+            'dropdown': [ 'project 1', 'project 2', 'project 3' ]
+        },
 
-    //'Page' will be updated after we fetch the data for the blog post.
+        'title': 'Blog Page',
 
-    'page' : ` <p>  Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex quam neque laborum. Doloribus, vitae? Quod ad voluptatem, numquam vitae quibusdam incidunt eos! Ipsa voluptatibus vel voluptate repudiandae similique alias quam!</p> `
-  
-}
-  
-  };
+        // 'Page' will be updated after we fetch the data for the blog post.
+
+        'page': ' <p>  Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex quam neque laborum. Doloribus, vitae? Quod ad voluptatem, numquam vitae quibusdam incidunt eos! Ipsa voluptatibus vel voluptate repudiandae similique alias quam!</p> '
+
+    }
+
+};
 
 
+// function declaration . Render is  used to re-render the page.
+function render(state){
+    // console.log('state came in as:' , state);
+    // We use funtion invocation that actually runs the function ans then 'returns' the markup so that it is properly rendered in the browser.
 
-//function declaration . Render is  used to re-render the page.
-function render(state) {
-
-//console.log('state came in as:' , state);
-// We use funtion invocation that actually runs the function ans then 'returns' the markup so that it is properly rendered in the browser.
-
-//innerHTMl property root element
-document.querySelector('#root').innerHTML = `
+    // innerHTMl property root element
+    document.querySelector('#root').innerHTML = `
 ${Navigation(state)}
  ${Header(state)}
   ${Main(state)}
@@ -204,10 +179,9 @@ ${Navigation(state)}
     */
 
     router.updatePageLinks();
-    //replaces our custom click event listeners with the recursive render.
-
+    // replaces our custom click event listeners with the recursive render.
 }
-/*const navItems = document.querySelectorAll('nav > ul > li:not(.dropdowm)');
+/* const navItems = document.querySelectorAll('nav > ul > li:not(.dropdowm)');
 
 //queryselectorall is a css selector
 
@@ -221,7 +195,7 @@ event.preventDefault();
 //Recursive function call.
 //event is object
 render(store[event.target.textContent.toLowerCase()]);
-//thats an expression that will evaulate string 
+//thats an expression that will evaulate string
 
 
      });
@@ -229,15 +203,15 @@ render(store[event.target.textContent.toLowerCase()]);
 */
 
 // invokation
-// to render a page we pass in piece of state 
+// to render a page we pass in piece of state
 render(store.home);
 
-//router.on("/", () => console.log("hello home page!")).resolve();
+// router.on("/", () => console.log("hello home page!")).resolve();
 // on takes in as a string the result of location.pathname as the first parameter
 // on is a navigo method that behaves as any other event listener might.
 // it listens to location.pathnamea and responds accordingly.
 
-/*router.on ('/' , function routerFxn() {
+/* router.on ('/' , function routerFxn() {
   console.log('Hello Home page');
 }).resolve();
 // The Element wil not exist until page is rendered.
@@ -252,8 +226,8 @@ router
     .resolve();
 */
 
-//https://github.com/krasimir/navigo#parameterized-urls
-/*router
+// https://github.com/krasimir/navigo#parameterized-urls
+/* router
     .on(':view', function handleParams(params){
        // console.log('hello',params.page);
         //console.log('params is:' , params);
@@ -268,16 +242,16 @@ router
 */
 
 router
-    .on( ':view' , (params) => {
+    .on(':view', (params) => {
         render(store[params.view]);
     })
     .resolve();
 
-    axios.get('https://jsonplaceholder.typicode.com/posts')
-    
+axios.get('https://jsonplaceholder.typicode.com/posts')
+
     .then((response) => {
-      const blogPosts = response.data;
-      const blogHTML = blogPosts.map((blogPost) => `
+        const blogPosts = response.data;
+        const blogHTML = blogPosts.map((blogPost) => `
     <section>
     <h2>${blogPost.title}</h2>
     <p>${blogPost.body}</p>
@@ -285,54 +259,52 @@ router
 
 `).join('');
 
-store.blog.page = blogHTML;
-    //console.log(blogHTML);
-
-});
-
+        store.blog.page = blogHTML;
+    // console.log(blogHTML);
+    });
 
 
-//let i = 0;
+// let i = 0;
 
-//Here the value of i will run from 0 until 3.
-//i will serve as a placeholder to represent the index of the item we need to access from navItems.
-//console.log(navItems[0]);
-//console.log(navItems[1]);
-//console.log(navItems[2]);
+// Here the value of i will run from 0 until 3.
+// i will serve as a placeholder to represent the index of the item we need to access from navItems.
+// console.log(navItems[0]);
+// console.log(navItems[1]);
+// console.log(navItems[2]);
 
-//while (i < navItems.length) {
+// while (i < navItems.length) {
 
-  //Use the value of i as an index to access the  navItem.
+// Use the value of i as an index to access the  navItem.
 
- // navItems[i].addEventListener('click' , 
-  
-  // Add this call back functionto each of the navItems.
-  
-  //function clickHandler(event) {
-   // event.preventDefault();
-    
-    // Re-render the page with a new piece of State that is  derived from what was clicked.
+// navItems[i].addEventListener('click' ,
 
-    //Target will reveal what generated the event - that is, what was 'clicked'.
+// Add this call back functionto each of the navItems.
 
-    //const clickedItem = event.target.textContent;
-    //const clicked  = clickedItem.toLowerCase();
-   // render(store[clicked]);
+// function clickHandler(event) {
+// event.preventDefault();
 
-  // Developers note: render(store[event.target.textContent.toLowerCase()]);
-//event.target gives the elemnt.
-   // render(store[event.target.textContent.toLowerCase()]);
-  //}
-  //);
+// Re-render the page with a new piece of State that is  derived from what was clicked.
 
- // i += 1;
-  
-//}
+// Target will reveal what generated the event - that is, what was 'clicked'.
+
+// const clickedItem = event.target.textContent;
+// const clicked  = clickedItem.toLowerCase();
+// render(store[clicked]);
+
+// Developers note: render(store[event.target.textContent.toLowerCase()]);
+// event.target gives the elemnt.
+// render(store[event.target.textContent.toLowerCase()]);
+// }
+// );
+
+// i += 1;
+
+// }
 
 
 // We want to re-render our page based on what the user clicks on our navigation menu.
 
-/* 
+/*
 
 1. Capture what was clicked in navigation - what is the text of the element that was clicked?
 2. Access a piece of state based on said text.

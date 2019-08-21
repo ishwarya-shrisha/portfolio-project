@@ -1,4 +1,3 @@
-
 export default (state) => `
   <footer>
       <ul>
@@ -18,13 +17,10 @@ export default (state) => `
 
           <li>
 
-              <a href="https://github.com/ishwarya-shrisha" target="_blank">
+              <a href="https://www.linkedin.com/in/ishwarya-ragavendra-rao-a1a252191/" target="_blank">
                 <span class="fab fa-linkedin-in"></span>
               </a>
               </li>
       </ul>
-      <address>
-        Ishwarya R<br>
-        123 Main St.<br>
     </footer>
     `;
