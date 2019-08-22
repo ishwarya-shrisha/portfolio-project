@@ -18,8 +18,8 @@ const store = {
 
     'home': {
         'links': {
-            'primary': [ 'Home', 'About', 'Contact', 'Blog' ],
-            'dropdown': [ 'project 1' ]
+            'primary': ['Home', 'About', 'Contact', 'Blog'],
+            'dropdown': ['project 1']
         },
 
         'title': 'Ishwarya Ragavendra',
@@ -34,8 +34,8 @@ const store = {
 
     'about': {
         'links': {
-            'primary': [ 'Home', 'About', 'Contact', 'Blog' ],
-            'dropdown': [ 'project 1', 'project 2', 'project 3' ]
+            'primary': ['Home', 'About', 'Contact', 'Blog'],
+            'dropdown': ['project 1']
         },
         'title': 'About Page',
         'page': `<p class="aboutpara"> "My Name is Ishwarya Ragavendra and I am" <em> very excited </em> "to welcome you to my online Portfolio. I Hope you like it. I am just beginning my journey as a web developer. I had always had planned on working with kids with special needs and
@@ -45,8 +45,8 @@ const store = {
 
     'contact': {
         'links': {
-            'primary': [ 'Home', 'About', 'Contact', 'Blog' ],
-            'dropdown': [ 'project 1', 'project 2', 'project 3' ]
+            'primary': ['Home', 'About', 'Contact', 'Blog'],
+            'dropdown': ['project 1']
         },
 
         'title': 'Contact',
@@ -145,8 +145,8 @@ const store = {
 
     'blog': {
         'links': {
-            'primary': [ 'Home', 'About', 'Contact', 'Blog' ],
-            'dropdown': [ 'project 1', 'project 2', 'project 3' ]
+            'primary': ['Home', 'About', 'Contact', 'Blog'],
+            'dropdown': ['project 1', 'project 2', 'project 3']
         },
 
         'title': 'Blog Page',
@@ -161,7 +161,7 @@ const store = {
 
 
 // function declaration . Render is  used to re-render the page.
-function render(state){
+function render(state) {
     // console.log('state came in as:' , state);
     // We use funtion invocation that actually runs the function ans then 'returns' the markup so that it is properly rendered in the browser.
 
@@ -249,9 +249,9 @@ router
 
 axios.get('https://jsonplaceholder.typicode.com/posts')
 
-    .then((response) => {
-        const blogPosts = response.data;
-        const blogHTML = blogPosts.map((blogPost) => `
+.then((response) => {
+    const blogPosts = response.data;
+    const blogHTML = blogPosts.map((blogPost) => `
     <section>
     <h2>${blogPost.title}</h2>
     <p>${blogPost.body}</p>
@@ -259,9 +259,9 @@ axios.get('https://jsonplaceholder.typicode.com/posts')
 
 `).join('');
 
-        store.blog.page = blogHTML;
+    store.blog.page = blogHTML;
     // console.log(blogHTML);
-    });
+});
 
 
 // let i = 0;
