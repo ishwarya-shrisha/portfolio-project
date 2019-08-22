@@ -146,7 +146,7 @@ const store = {
     'blog': {
         'links': {
             'primary': ['Home', 'About', 'Contact', 'Blog'],
-            'dropdown': ['project 1', 'project 2', 'project 3']
+            'dropdown': ['project 1']
         },
 
         'title': 'Blog Page',
